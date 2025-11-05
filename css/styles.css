@@ -1,59 +1,224 @@
-
 :root {
-  --bg: #000000;
-  --bg-card: #0e0e0e;
-  --text: #d8e6ff;
-  --text-soft: #93a4c6;
-  --accent: #0b66ff;
-  --accent-soft: #144a9a;
-  --radius: 10px;
-  --font: 'Inter', sans-serif;
+    --color-primary: #3b82f6; /* Blue */
+    --color-primary-dark: #2563eb;
+    --color-secondary: #10b981; /* Green */
+    --color-text: #374151; /* Dark Grey */
+    --color-light-text: #6b7280; /* Medium Grey */
+    --color-background: #ffffff;
+    --color-grey-bg: #f9fafb; /* Light Grey background for sections */
+    --color-card-bg: #ffffff;
+    --color-border: #e5e7eb;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    --border-radius: 0.5rem;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
 }
 
-* { box-sizing: border-box; }
+/* Base Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  margin:0;
-  padding:0;
-  line-height:1.6;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
 }
 
-h1,h2,h3 { font-weight:700; margin:0 0 .5rem 0; }
-
-.section { padding:80px 20px; max-width:1200px; margin:auto; }
-
-.btn-primary {
-  background: var(--accent);
-  color:#fff;
-  padding:12px 22px;
-  border-radius:var(--radius);
-  text-decoration:none;
-  font-weight:600;
-  display:inline-block;
+h1, h2, h3 {
+    line-height: 1.2;
+    color: var(--color-text);
+    font-weight: 800;
 }
 
-.btn-outline {
-  border:1px solid var(--accent);
-  color:var(--accent);
-  padding:12px 22px;
-  border-radius:var(--radius);
-  text-decoration:none;
-  font-weight:600;
-  display:inline-block;
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--color-light-text);
 }
 
-.card, .plan {
-  background: var(--bg-card);
-  padding:28px;
-  border-radius:var(--radius);
-  border:1px solid var(--accent-soft);
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
 }
 
-.hero {
-  padding:120px 20px 100px;
-  max-width:1200px;
-  margin:auto;
+a:hover {
+    color: var(--color-primary-dark);
 }
+
+.highlight {
+    color: var(--color-primary);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.primary-button:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-background);
+}
+
+.secondary-button {
+    background-color: var(--color-grey-bg);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+}
+
+.secondary-button:hover {
+    background-color: var(--color-border);
+}
+
+.primary-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.primary-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* Sections & Layout */
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.grey-bg {
+    background-color: var(--color-grey-bg);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Cards (Features, Pricing, Testimonials) */
+.feature-card, .pricing-card, .testimonial-card {
+    background-color: var(--color-card-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover, .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.pricing-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--color-border);
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 0.5rem 0 1rem;
+}
+
+.featured-card {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary);
+}
+
+/* Contact Form */
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.contact-form input[type="email"] {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    width: 60%;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+/* --- Smooth Animation Keyframes --- */
+
+/* Hero Entrance Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in-fade {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0; /* Ensures elements start hidden */
+}
+
+.animate-in-slide {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Scroll-Triggered Animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Custom ease for a smoother feel */
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments in layout.css */
