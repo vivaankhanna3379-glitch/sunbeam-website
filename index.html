@@ -16,6 +16,209 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
-  <!-- content omitted for brevity -->
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Sunbeam AI home">
+        <img src="assets/logo.png" alt="Sunbeam AI Solutions logo" class="brand-logo" width="40" height="40" />
+        <span class="brand-text">Sunbeam AI</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn-outline">Book a demo</a>
+      </nav>
+
+      <button id="mobileNavToggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobileNav">
+        <span class="sr-only">Toggle menu</span>
+        Menu
+      </button>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="btn-outline">Book a demo</a>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Grow faster with AI that just works ✨</h1>
+          <p class="lead">Sunbeam automates customer outreach, lead qualification, and scheduling — so your team focuses on deals, not admin.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="#signup">Start free trial</a>
+            <a class="btn-ghost" href="#contact">Book a demo</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Personalised email & SMS sequences</li>
+            <li>AI lead scoring & routing</li>
+            <li>One-click scheduling & workflows</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img src="assets/hero-illustration.svg" alt="Illustration: automation connecting systems" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Automated Outreach</h3>
+            <p>Personalised email & SMS sequences that convert prospects into meetings.</p>
+          </article>
+          <article class="card">
+            <h3>Lead Qualification</h3>
+            <p>AI scoring surfaces leads that are ready to buy and routes them to your reps.</p>
+          </article>
+          <article class="card">
+            <h3>Scheduling & Workflows</h3>
+            <p>One-click booking and cross-team workflows that reduce admin time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section light">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <ol class="how-list">
+          <li><strong>Connect</strong> — Link your CRM and calendar in minutes.</li>
+          <li><strong>Automate</strong> — Create sequences & scoring rules with templates.</li>
+          <li><strong>Scale</strong> — Monitor conversion & iterate; let AI do the heavy lifting.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title">Trusted by growing teams</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial">
+            <p>“Sunbeam doubled our inbound qualified leads in 3 months.”</p>
+            <footer>— Priya K., CEO, BrightRetail</footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“Scheduling automation saved 20% of admin hours weekly.”</p>
+            <footer>— Amit R., Operations Head, BlueLogix</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section light">
+      <div class="container">
+        <h2 class="section-title">Simple plans for every stage</h2>
+        <div class="pricing-grid">
+          <div class="plan">
+            <h3>Starter</h3>
+            <div class="price">₹999<span>/mo</span></div>
+            <ul>
+              <li>Up to 1,000 contacts</li>
+              <li>Basic automations</li>
+            </ul>
+            <a class="btn-outline" href="#signup">Get started</a>
+          </div>
+          <div class="plan recommended">
+            <h3>Growth</h3>
+            <div class="price">₹4,999<span>/mo</span></div>
+            <ul>
+              <li>Advanced automations</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn-primary" href="#signup">Try Growth</a>
+          </div>
+          <div class="plan">
+            <h3>Pro</h3>
+            <div class="price">Custom</div>
+            <ul>
+              <li>Dedicated onboarding</li>
+              <li>Integrations & SLA</li>
+            </ul>
+            <a class="btn-outline" href="#contact">Contact sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <h2>Ready to automate your growth?</h2>
+        <a class="btn-primary" href="#signup">Start free trial</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <h2>Talk to an expert</h2>
+            <p>Request a demo or ask a question — we’ll get back within one business day.</p>
+            <ul>
+              <li><strong>Email:</strong> hello@sunbeam.ai</li>
+              <li><strong>Phone:</strong> +91 22 4000 0000</li>
+            </ul>
+          </div>
+          <form id="contactForm" class="contact-form" novalidate>
+            <label>
+              <span>Name</span>
+              <input name="name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" required />
+            </label>
+            <label>
+              <span>Company</span>
+              <input name="company" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn-primary" type="submit">Request demo</button>
+            </div>
+            <p class="form-note">We respect your privacy — your info stays with us.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Sunbeam AI Solutions</div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- status live region -->
+  <div id="siteStatus" aria-live="polite" class="sr-only" aria-atomic="true"></div>
+
+  <!-- *** required JS *** -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
