@@ -1,26 +1,33 @@
+// js/main.js
+/**
+ * Implements smooth scroll-triggered animations using the Intersection Observer API.
+ * Elements with the class 'animate-on-scroll' will gain the 'animated' class 
+ * when they enter the viewport, triggering CSS transitions.
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all elements tagged for animation
+  const animatedElements = document.querySelectorAll(".animate-on-scroll");
 
-// mobile nav toggle
-const toggle = document.getElementById("mobileNavToggle");
-const mobileNav = document.getElementById("mobileNav");
+  if (!animatedElements.length) return; // Exit if no elements are found
 
-if (toggle && mobileNav) {
-  toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", !expanded);
-    mobileNav.setAttribute("aria-hidden", expanded);
-    mobileNav.classList.toggle("open");
-  });
-}
+  // Intersection Observer configuration
+  const observerOptions = {
+    root: null, // relative to the viewport
+    rootMargin: "0px",
+    threshold: 0.1, // trigger when 10% of the element is visible
+  };
 
-// update year in footer
-const y = document.getElementById("year");
-if (y) y.textContent = new Date().getFullYear();
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Element is visible, add the 'animated' class
+        entry.target.classList.add("animated");
+        // Stop observing the element once it has been animated
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
 
-// basic contact form handler – prevents blank submit
-const form = document.getElementById("contactForm");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("Thanks! We'll get back to you within 1 business day.");
-  });
-}
+  // Start observing each animated element
+  animatedElements.forEach(el => observer.observe(el));
+});
